@@ -1,4 +1,4 @@
-# French Accents ⌨️
+# French Accents ⌨️ 🇫🇷
 <p  align="center">
 <a  href="http://makeapullrequest.com">
 <img  src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"  alt="PRs Welcome">
