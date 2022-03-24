@@ -1,17 +1,15 @@
 {
-  "name": "French Accent Extensions",
-  "description": "Write in French using Querty.",
-  "version": "1.0",
+  "name": "French Accents",
+  "description": "Copy French accented characters to write using Querty.",
+  "version": "1.0.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
   "permissions": [
-    "storage",
     "activeTab",
     "scripting",
-    "clipboardWrite",
-    "clipboardRead"
+    "clipboardWrite"
   ],
   "action": {
     "default_popup": "popup.html",

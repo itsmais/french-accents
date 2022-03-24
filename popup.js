@@ -1,6 +1,3 @@
-// guide on accented characters in javascript
-// http://www.javascripter.net/faq/accentedcharacters.htm
-
 const smallCase = [
   "\xE0", // "à",
   "\xE2", // "â",

@@ -32,3 +32,12 @@ body {
 .shift-btn-dark {
   margin: 3px;
 }
+.btn-dark:hover,
+.shift-btn-dark:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.btn-dark:active,
+.shift-btn-dark:active {
+  opacity: 0.8;
+}
