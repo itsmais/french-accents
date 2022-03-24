@@ -1,0 +1,34 @@
+/* 
+Background: #BCECE0 
+Text: #36EEE0
+Shift: #F652A0
+Button: #4C5270
+*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  background-color: #bcece0;
+}
+.keyboard {
+  display: flex;
+  flex-direction: column;
+}
+.row-1,
+.row-2 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.btn-dark {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: #36eee0;
+  background-color: #4c5270;
+  border: unset;
+  border-radius: 7px;
+  padding: 8px;
+  margin: 3px;
+  width: 40px;
+}
+.shift-btn-dark {
+  margin: 3px;
+}
