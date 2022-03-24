@@ -1,14 +1,12 @@
 {
   "name": "French Accents",
-  "description": "Copy French accented characters to write using Querty.",
+  "description": "Click-to-Copy French accented characters that allow you to write French with just Querty",
   "version": "1.0.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
   "permissions": [
-    "activeTab",
-    "scripting",
     "clipboardWrite"
   ],
   "action": {
