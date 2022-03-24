@@ -18,7 +18,7 @@ Feel free to submit an issue for bugs and features.
 
 ## 🖼 Screenshot of the Extension
 <p float="left">
-  <img src="screenshots/extension-screenshot.PNG" width="700" />
+  <img src="screenshots/extension-screenshot.png" width="700" />
 </p>
 
 <!-- ## 🎖 Contributors
