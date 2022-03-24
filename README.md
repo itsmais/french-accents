@@ -1,5 +1,10 @@
-# french-accents
+# French Accents ⌨️
 A chrome extension that lets you copy French accents, without the need to switch to Azerty.
+<p  align="center">
+<a  href="http://makeapullrequest.com">
+<img  src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"  alt="PRs Welcome">
+</a>
+</p>
 
 ## Credits and resources
 - [Accented Characters and Ligatures in HTML and JavaScript](http://www.javascripter.net/faq/accentedcharacters.htm)
@@ -10,3 +15,14 @@ A chrome extension that lets you copy French accents, without the need to switch
 
 ## Contribution
 Feel free to submit an issue for bugs and features.
+
+## 🖼 Screenshot of the Extension
+<p float="left">
+  <img src="screenshots/extension-screenshot.PNG" width="700" />
+</p>
+
+<!-- ## 🎖 Contributors
+<a href = "https://github.com/itsmaisfrench-accents/contributors">
+  <img src = "https://contrib.rocks/image?repo=itsmais/french-accents"/>
+</a>
+ -->
