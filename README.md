@@ -1,4 +1,4 @@
-# French Accents ⌨️ 🇫🇷
+# French Accents ⌨️
 <p  align="center">
 <a  href="http://makeapullrequest.com">
 <img  src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"  alt="PRs Welcome">
@@ -12,6 +12,9 @@ A chrome extension that lets you copy French accents, without the need to switch
 - [Clipboard.writeText() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText)
 - [Getting Started - Google Developers - Extensions](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
 - [Shift icon from IconPark by Bytedance](https://iconpark.oceanengine.com/official)
+
+## Link to Extension 🔗
+👉 [Link to extension on Chrome Websore](https://chrome.google.com/webstore/detail/french-accents/jmnjcglbcleaddocnpkckjmlloeaaaak/) 👈
 
 ## Contributing 🚀
 Feel free to submit an issue for bugs and features.
