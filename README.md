@@ -14,7 +14,7 @@ A chrome extension that lets you copy French accents, without the need to switch
 - [Shift icon from IconPark by Bytedance](https://iconpark.oceanengine.com/official)
 
 ## Link to Extension 🔗
-👉 [Link to extension on Chrome Websore](https://chrome.google.com/webstore/detail/french-accents/jmnjcglbcleaddocnpkckjmlloeaaaak/) 👈
+👉 [Link to extension on Chrome Webstore](https://chrome.google.com/webstore/detail/french-accents/jmnjcglbcleaddocnpkckjmlloeaaaak/) 👈
 
 ## Link to extension's Figma file ✒️
 👉 [Link to file on Figma Community](https://www.figma.com/community/file/1090739194841563580/French-Accents-Chrome-Extension) 👈
