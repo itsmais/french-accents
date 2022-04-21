@@ -1,7 +1,7 @@
 {
   "name": "French Accents",
-  "description": "Click-to-Copy French accented characters that allow you to write French with just Querty",
-  "version": "1.0.0",
+  "description": "Click-to-Copy French accented characters that allow you to write French with just QWERTY",
+  "version": "1.0.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
