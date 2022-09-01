@@ -19,6 +19,10 @@ A chrome extension that lets you copy French accents, without the need to switch
 ## Link to extension's Figma file ✒️
 👉 [Link to file on Figma Community](https://www.figma.com/community/file/1090739194841563580/French-Accents-Chrome-Extension) 👈
 
+## To do ⚡
+- Add a color palette change in the extension's option so that user can choose their own theme (including dark theming).
+- Make all letters switch to capital case whenever user is holding the Shift key.
+
 ## Contributing 🚀
 Feel free to submit an issue for bugs and features.
 
