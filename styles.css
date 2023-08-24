@@ -5,19 +5,24 @@ Shift: #F652A0
 Button: #4C5270
 */
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 body {
   background-color: #bcece0;
+  width: fit-content;
 }
+
 .keyboard {
   display: flex;
   flex-direction: column;
 }
+
 .row-1,
 .row-2 {
   display: flex;
   justify-content: center;
   align-items: start;
 }
+
 .btn-dark {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
@@ -29,14 +34,17 @@ body {
   margin: 3px;
   width: 40px;
 }
+
 .shift-btn-dark {
   margin: 3px;
 }
+
 .btn-dark:hover,
 .shift-btn-dark:hover {
   opacity: 0.9;
   cursor: pointer;
 }
+
 .btn-dark:active,
 .shift-btn-dark:active {
   opacity: 0.8;
