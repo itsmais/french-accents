@@ -44,10 +44,16 @@ const capitalCase = [
   "»", // "»",
 ];
 
-let isShiftOn = false;
+let isShiftLocked = false;
+let isShiftHeld = false;
+
+function isShiftActive() {
+  return isShiftLocked || isShiftHeld;
+}
 
 function fillKeyboardContent() {
   const firstRow = document.getElementsByClassName("row-1")[0];
+  const activeCase = isShiftActive() ? capitalCase : smallCase;
   firstRow.innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const keyboardLetter = document.createElement("button");
@@ -56,10 +62,10 @@ function fillKeyboardContent() {
 
     keyboardLetter.setAttribute("id", i);
     keyboardLetter.addEventListener("click", function () {
-      navigator.clipboard.writeText(isShiftOn ? capitalCase[i] : smallCase[i]);
+      navigator.clipboard.writeText(activeCase[i]);
     });
 
-    keyboardLetter.innerText = isShiftOn ? capitalCase[i] : smallCase[i];
+    keyboardLetter.innerText = activeCase[i];
     firstRow.appendChild(keyboardLetter);
   }
 
@@ -78,12 +84,12 @@ function fillKeyboardContent() {
   for (let i = 11; i < 20; i++) {
     const keyboardLetter = document.createElement("button");
     keyboardLetter.type = "button";
-    keyboardLetter.innerText = isShiftOn ? capitalCase[i] : smallCase[i];
+    keyboardLetter.innerText = activeCase[i];
     keyboardLetter.classList.add("btn-dark");
 
     keyboardLetter.setAttribute("id", i);
     keyboardLetter.addEventListener("click", function () {
-      navigator.clipboard.writeText(isShiftOn ? capitalCase[i] : smallCase[i]);
+      navigator.clipboard.writeText(activeCase[i]);
     });
 
     secondRow.appendChild(keyboardLetter);
@@ -92,11 +98,32 @@ function fillKeyboardContent() {
 }
 
 function shiftClicked() {
-  isShiftOn = !isShiftOn;
+  isShiftLocked = !isShiftLocked;
+  fillKeyboardContent();
+}
+
+function handleShiftKeyDown(event) {
+  if (event.key !== "Shift" || isShiftHeld) {
+    return;
+  }
+
+  isShiftHeld = true;
+  fillKeyboardContent();
+}
+
+function handleShiftKeyUp(event) {
+  if (event.key !== "Shift" || !isShiftHeld) {
+    return;
+  }
+
+  isShiftHeld = false;
   fillKeyboardContent();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("keydown", handleShiftKeyDown);
+  document.addEventListener("keyup", handleShiftKeyUp);
+
   getStoredTheme()
     .then((theme) => {
       applyThemeToDocument(theme);
