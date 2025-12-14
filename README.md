@@ -32,10 +32,6 @@ Open the extension options page to choose from six color palettes and restyle th
 
 👉 [Link to file on Figma Community](https://www.figma.com/community/file/1090739194841563580/French-Accents-Chrome-Extension) 👈
 
-## To do ⚡
-
-- Make all letters switch to capital case whenever user is holding the Shift key.
-
 ## Contributing 🚀
 
 Feel free to submit an issue for bugs and features.
