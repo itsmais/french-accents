@@ -8,4 +8,4 @@
 - Add a lightweight keyboard shortcut to toggle the popup or to paste the last copied accent directly.
 - Provide a compact layout mode that fits in narrow side panels (e.g., 240px width) without wrapping.
 - Build automated UI tests (Playwright) that verify clicking each button copies the right character and respects the selected theme.
-- Add a CI workflow that lints, bundles assets, and runs tests before packaging the extension.
+- Add a CI workflow that lints, bundles assets, and runs tests before packaging the extension. Is there a way to automate publishing on the webstore?

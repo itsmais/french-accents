@@ -13,6 +13,11 @@ Open the extension options page to choose from six color palettes and restyle th
 
 ## Changelog 📝
 
+### 1.1.1
+- Added banner mode toggle in Options to keep the keyboard open as a page-top banner (falls back to popup on unsupported pages).
+- Enabled Shift-hold to temporarily switch the keyboard to uppercase while copying.
+- Improved theme contrast on the Options page without changing the popup colors.
+
 ### 1.1.0
 - Added theme picker with six palettes in Options; popup now applies the selected palette and includes refreshed styling.
 
