@@ -11,6 +11,11 @@ A chrome extension that lets you copy French accents, without the need to switch
 
 Open the extension options page to choose from six color palettes and restyle the keyboard.
 
+## Changelog 📝
+
+### 1.1.0
+- Added theme picker with six palettes in Options; popup now applies the selected palette and includes refreshed styling.
+
 ## Credits and resources 📖
 
 - [Accented Characters and Ligatures in HTML and JavaScript](http://www.javascripter.net/faq/accentedcharacters.htm)
