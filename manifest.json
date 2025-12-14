@@ -8,7 +8,9 @@
   },
   "permissions": [
     "clipboardWrite",
-    "storage"
+    "storage",
+    "activeTab",
+    "scripting"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -25,5 +27,18 @@
     "48": "/images/logo48.png",
     "128": "/images/logo128.png"
   },
-  "options_page": "options.html"
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "popup.html",
+        "popup.js",
+        "styles.css",
+        "themes.js",
+        "icons/caps.svg",
+        "banner.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

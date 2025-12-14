@@ -124,12 +124,17 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", handleShiftKeyDown);
   document.addEventListener("keyup", handleShiftKeyUp);
 
+  const isBannerView =
+    new URLSearchParams(window.location.search).get("banner") === "1";
+
+  if (isBannerView) {
+    document.body.classList.add("banner-mode");
+  }
+
   getStoredTheme()
+    .catch(() => findThemeById(DEFAULT_THEME_ID))
     .then((theme) => {
       applyThemeToDocument(theme);
-    })
-    .catch(() => {
-      applyThemeToDocument(findThemeById(DEFAULT_THEME_ID));
     })
     .finally(() => {
       fillKeyboardContent();

@@ -1,7 +1,7 @@
 # Ideas to improve French Accents
 
-- Make all letters switch to capital case whenever user is holding the Shift key.
-- Make the extension stay as an opened banner. This should be a toggle-able button in the options. By default, it's off.
+[X] Make all letters switch to capital case whenever user is holding the Shift key.
+[X] Make the extension stay as an opened banner. This should be a toggle-able button in the options. By default, it's off.
 - Add a short onboarding screen that shows the clipboard behavior, shortcut to open the popup, and how to toggle the shift row.
 - Offer an inline tooltip/label for each key describing its Unicode name and when the glyph is missing on some fonts (e.g., œ/Œ).
 - Ship a small "recently copied" strip so users can paste multiple characters without reopening the popup.

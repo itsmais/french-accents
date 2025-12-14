@@ -19,6 +19,14 @@ body {
   padding: 8px;
 }
 
+body.banner-mode {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
 .keyboard {
   display: flex;
   flex-direction: column;

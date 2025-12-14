@@ -16,6 +16,9 @@ Open the extension options page to choose from six color palettes and restyle th
 ### 1.1.0
 - Added theme picker with six palettes in Options; popup now applies the selected palette and includes refreshed styling.
 
+### 1.1.1
+- TODO
+
 ## Credits and resources 📖
 
 - [Accented Characters and Ligatures in HTML and JavaScript](http://www.javascripter.net/faq/accentedcharacters.htm)

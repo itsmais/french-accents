@@ -1,0 +1,48 @@
+#french-accents-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#french-accents-banner .fab-shell {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  background: transparent;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+#french-accents-banner iframe {
+  border: none;
+  width: 100%;
+  height: 120px;
+  display: block;
+  background: transparent;
+}
+
+#french-accents-banner .fab-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-family: sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 120ms ease-in-out;
+}
+
+#french-accents-banner .fab-close:hover {
+  opacity: 0.9;
+}

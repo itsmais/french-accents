@@ -119,3 +119,50 @@ body {
   margin-top: 12px;
   font-weight: 600;
 }
+
+.behavior {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.behavior h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.toggle input[type="checkbox"] {
+  accent-color: var(--shift-color);
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.toggle-title {
+  font-weight: 700;
+  display: block;
+}
+
+.toggle-description {
+  display: block;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.toggle-note {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.8;
+}

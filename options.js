@@ -1,4 +1,5 @@
 let statusTimeoutId = null;
+const DEFAULT_BANNER_MODE = false;
 
 function renderPaletteOptions(selectedThemeId) {
   const paletteList = document.getElementById("palette-list");
@@ -51,6 +52,17 @@ function showStatus(message) {
   }, 1500);
 }
 
+function saveBannerMode(enabled) {
+  if (!chrome?.storage?.sync) {
+    showStatus("Banner mode unavailable.");
+    return;
+  }
+
+  chrome.storage.sync.set({ bannerMode: enabled }, () => {
+    showStatus(enabled ? "Banner mode enabled." : "Banner mode disabled.");
+  });
+}
+
 function saveTheme(themeId) {
   const theme = findThemeById(themeId);
   applyThemeToDocument(theme);
@@ -59,15 +71,42 @@ function saveTheme(themeId) {
   });
 }
 
+function getStoredBannerMode() {
+  return new Promise((resolve) => {
+    if (!chrome?.storage?.sync) {
+      resolve(DEFAULT_BANNER_MODE);
+      return;
+    }
+
+    chrome.storage.sync.get(["bannerMode"], (result) => {
+      resolve(Boolean(result.bannerMode));
+    });
+  });
+}
+
+function bindBannerToggle(initialValue) {
+  const toggle = document.getElementById("banner-toggle");
+  if (!toggle) {
+    return;
+  }
+
+  toggle.checked = initialValue;
+  toggle.addEventListener("change", () => {
+    saveBannerMode(toggle.checked);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  getStoredTheme()
-    .then((theme) => {
+  Promise.all([getStoredTheme(), getStoredBannerMode()])
+    .then(([theme, bannerMode]) => {
       renderPaletteOptions(theme.id);
       applyThemeToDocument(theme);
+      bindBannerToggle(bannerMode);
     })
     .catch(() => {
       const fallback = findThemeById(DEFAULT_THEME_ID);
       renderPaletteOptions(fallback.id);
       applyThemeToDocument(fallback);
+      bindBannerToggle(DEFAULT_BANNER_MODE);
     });
 });
