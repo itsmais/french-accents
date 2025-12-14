@@ -13,7 +13,7 @@
 
 body {
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--options-text-color, var(--text-color));
   font-family: "Nunito", sans-serif;
   margin: 0;
   min-height: 100vh;

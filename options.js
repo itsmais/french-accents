@@ -52,6 +52,17 @@ function showStatus(message) {
   }, 1500);
 }
 
+function applyOptionsTextContrast(theme) {
+  const root = document.documentElement;
+  if (!root) {
+    return;
+  }
+
+  const accessibleText =
+    theme.id === "mint-sorbet" ? "#1f7c74" : theme.text;
+  root.style.setProperty("--options-text-color", accessibleText);
+}
+
 function saveBannerMode(enabled) {
   if (!chrome?.storage?.sync) {
     showStatus("Banner mode unavailable.");
@@ -101,12 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(([theme, bannerMode]) => {
       renderPaletteOptions(theme.id);
       applyThemeToDocument(theme);
+      applyOptionsTextContrast(theme);
       bindBannerToggle(bannerMode);
     })
     .catch(() => {
       const fallback = findThemeById(DEFAULT_THEME_ID);
       renderPaletteOptions(fallback.id);
       applyThemeToDocument(fallback);
+      applyOptionsTextContrast(fallback);
       bindBannerToggle(DEFAULT_BANNER_MODE);
     });
 });
