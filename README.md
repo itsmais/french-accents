@@ -30,9 +30,3 @@ Feel free to submit an issue for bugs and features.
 <p float="left">
   <img src="screenshots/extension-screenshot.png" width="700" />
 </p>
-
-<!-- ## 🎖 Contributors
-<a href = "https://github.com/itsmaisfrench-accents/contributors">
-  <img src = "https://contrib.rocks/image?repo=itsmais/french-accents"/>
-</a>
- -->
