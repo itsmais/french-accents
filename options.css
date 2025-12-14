@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+  --background-color: #bcece0;
+  --text-color: #36eee0;
+  --shift-color: #f652a0;
+  --button-color: #4c5270;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.options {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.page-title h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.page-title .tagline {
+  margin: 6px 0 0;
+  opacity: 0.85;
+}
+
+.preview {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.preview .swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.preview .swatch:nth-child(1) {
+  background-color: var(--background-color);
+}
+
+.preview .swatch:nth-child(2) {
+  background-color: var(--button-color);
+}
+
+.preview .swatch:nth-child(3) {
+  background-color: var(--shift-color);
+}
+
+.preview .swatch:nth-child(4) {
+  background-color: var(--text-color);
+}
+
+.palette-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.palette-choice {
+  display: grid;
+  gap: 8px 12px;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.palette-choice input[type="radio"] {
+  accent-color: var(--shift-color);
+  width: 18px;
+  height: 18px;
+}
+
+.palette-name {
+  font-weight: 700;
+}
+
+.swatch-set {
+  display: flex;
+  gap: 8px;
+}
+
+.swatch-set .swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.status {
+  min-height: 22px;
+  margin-top: 12px;
+  font-weight: 600;
+}

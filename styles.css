@@ -1,14 +1,22 @@
-/* 
-Background: #BCECE0 
-Text: #36EEE0
-Shift: #F652A0
-Button: #4C5270
-*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
+:root {
+  --background-color: #bcece0;
+  --text-color: #36eee0;
+  --shift-color: #f652a0;
+  --button-color: #4c5270;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #bcece0;
+  background-color: var(--background-color);
+  color: var(--text-color);
   width: fit-content;
+  margin: 0;
+  padding: 8px;
 }
 
 .keyboard {
@@ -26,17 +34,33 @@ body {
 .btn-dark {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
-  color: #36eee0;
-  background-color: #4c5270;
+  color: var(--text-color);
+  background-color: var(--button-color);
   border: unset;
   border-radius: 7px;
   padding: 8px;
   margin: 3px;
   width: 40px;
+  transition: opacity 120ms ease-in-out, transform 90ms ease-in-out;
 }
 
 .shift-btn-dark {
   margin: 3px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--shift-color);
+  border-radius: 7px;
+  border: none;
+  padding: 8px;
+  transition: opacity 120ms ease-in-out, transform 90ms ease-in-out;
+}
+
+.shift-btn-dark img {
+  width: 18px;
+  height: 18px;
 }
 
 .btn-dark:hover,
@@ -48,4 +72,5 @@ body {
 .btn-dark:active,
 .shift-btn-dark:active {
   opacity: 0.8;
+  transform: translateY(1px);
 }

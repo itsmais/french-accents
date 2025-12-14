@@ -47,39 +47,29 @@ const capitalCase = [
 let isShiftOn = false;
 
 function fillKeyboardContent() {
-  // first row
   const firstRow = document.getElementsByClassName("row-1")[0];
   firstRow.innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const keyboardLetter = document.createElement("button");
+    keyboardLetter.type = "button";
     keyboardLetter.classList.add("btn-dark");
 
     keyboardLetter.setAttribute("id", i);
-    // adding copy on click to button
     keyboardLetter.addEventListener("click", function () {
-      navigator.clipboard
-        .writeText(isShiftOn ? capitalCase[i] : smallCase[i])
-        .then(
-          function () {
-            /* clipboard successfully set */
-          },
-          function () {
-            /* clipboard write failed */
-          }
-        );
+      navigator.clipboard.writeText(isShiftOn ? capitalCase[i] : smallCase[i]);
     });
 
     keyboardLetter.innerText = isShiftOn ? capitalCase[i] : smallCase[i];
     firstRow.appendChild(keyboardLetter);
   }
 
-  // second row
-  let secondRow = document.getElementsByClassName("row-2")[0];
+  const secondRow = document.getElementsByClassName("row-2")[0];
   secondRow.innerHTML = "";
 
-  // shift key
-  const shiftButton = document.createElement("div");
+  const shiftButton = document.createElement("button");
+  shiftButton.type = "button";
   shiftButton.classList.add("shift-btn-dark");
+  shiftButton.setAttribute("aria-label", "Toggle uppercase row");
   const icon = document.createElement("img");
   icon.src = "icons/caps.svg";
   shiftButton.appendChild(icon);
@@ -87,31 +77,34 @@ function fillKeyboardContent() {
 
   for (let i = 11; i < 20; i++) {
     const keyboardLetter = document.createElement("button");
+    keyboardLetter.type = "button";
     keyboardLetter.innerText = isShiftOn ? capitalCase[i] : smallCase[i];
     keyboardLetter.classList.add("btn-dark");
 
     keyboardLetter.setAttribute("id", i);
-    // adding copy on click to button
     keyboardLetter.addEventListener("click", function () {
-      navigator.clipboard
-        .writeText(isShiftOn ? capitalCase[i] : smallCase[i])
-        .then(
-          function () {
-            /* clipboard successfully set */
-          },
-          function () {
-            /* clipboard write failed */
-          }
-        );
+      navigator.clipboard.writeText(isShiftOn ? capitalCase[i] : smallCase[i]);
     });
 
     secondRow.appendChild(keyboardLetter);
   }
   shiftButton.addEventListener("click", shiftClicked);
 }
-fillKeyboardContent();
 
 function shiftClicked() {
   isShiftOn = !isShiftOn;
   fillKeyboardContent();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  getStoredTheme()
+    .then((theme) => {
+      applyThemeToDocument(theme);
+    })
+    .catch(() => {
+      applyThemeToDocument(findThemeById(DEFAULT_THEME_ID));
+    })
+    .finally(() => {
+      fillKeyboardContent();
+    });
+});

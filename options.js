@@ -1,47 +1,73 @@
-// let page = document.getElementById("buttonDiv");
-// let selectedClassName = "current";
-// const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
+let statusTimeoutId = null;
 
-// // Reacts to a button click by marking marking the selected button and saving
-// // the selection
-// function handleButtonClick(event) {
-//   // Remove styling from the previously selected color
-//   let current = event.target.parentElement.querySelector(
-//     `.${selectedClassName}`
-//   );
-//   if (current && current !== event.target) {
-//     current.classList.remove(selectedClassName);
-//   }
+function renderPaletteOptions(selectedThemeId) {
+  const paletteList = document.getElementById("palette-list");
+  paletteList.innerHTML = "";
 
-//   // Mark the button as selected
-//   let color = event.target.dataset.color;
-//   event.target.classList.add(selectedClassName);
-//   chrome.storage.sync.set({ color });
-// }
+  THEME_PALETTES.forEach((theme) => {
+    const label = document.createElement("label");
+    label.className = "palette-choice";
+    label.setAttribute("data-theme-id", theme.id);
 
-// // Add a button to the page for each supplied color
-// function constructOptions(buttonColors) {
-//   chrome.storage.sync.get("color", (data) => {
-//     let currentColor = data.color;
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "theme";
+    radio.value = theme.id;
+    radio.checked = theme.id === selectedThemeId;
+    radio.addEventListener("change", () => saveTheme(theme.id));
 
-//     // For each color we were provided…
-//     for (let buttonColor of buttonColors) {
-//       // …crate a button with that color…
-//       let button = document.createElement("button");
-//       button.dataset.color = buttonColor;
-//       button.style.backgroundColor = buttonColor;
+    const name = document.createElement("span");
+    name.className = "palette-name";
+    name.textContent = theme.name;
 
-//       // …mark the currently selected color…
-//       if (buttonColor === currentColor) {
-//         button.classList.add(selectedClassName);
-//       }
+    const swatchSet = document.createElement("div");
+    swatchSet.className = "swatch-set";
+    ["background", "button", "shift", "text"].forEach((key) => {
+      const swatch = document.createElement("span");
+      swatch.className = "swatch";
+      swatch.style.backgroundColor = theme[key];
+      swatch.title = `${key[0].toUpperCase()}${key.slice(1)}: ${theme[key]}`;
+      swatchSet.appendChild(swatch);
+    });
 
-//       // …and register a listener for when that button is clicked
-//       button.addEventListener("click", handleButtonClick);
-//       page.appendChild(button);
-//     }
-//   });
-// }
+    label.appendChild(radio);
+    label.appendChild(name);
+    label.appendChild(swatchSet);
 
-// // Initialize the page by constructing the color options
-// constructOptions(presetButtonColors);
+    paletteList.appendChild(label);
+  });
+}
+
+function showStatus(message) {
+  const status = document.getElementById("save-status");
+  status.textContent = message;
+
+  if (statusTimeoutId) {
+    clearTimeout(statusTimeoutId);
+  }
+
+  statusTimeoutId = window.setTimeout(() => {
+    status.textContent = "";
+  }, 1500);
+}
+
+function saveTheme(themeId) {
+  const theme = findThemeById(themeId);
+  applyThemeToDocument(theme);
+  chrome.storage.sync.set({ themeId }, () => {
+    showStatus("Theme saved.");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  getStoredTheme()
+    .then((theme) => {
+      renderPaletteOptions(theme.id);
+      applyThemeToDocument(theme);
+    })
+    .catch(() => {
+      const fallback = findThemeById(DEFAULT_THEME_ID);
+      renderPaletteOptions(fallback.id);
+      applyThemeToDocument(fallback);
+    });
+});

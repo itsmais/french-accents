@@ -2,15 +2,31 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <title>French Accents - Options</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="themes.js"></script>
 </head>
 
 <body>
-  <div>
-  </div>
-  <div>
-    <p>No options yet. To suggest edits, please add a GitHub issue. Thanks!</p>
-  </div>
+  <main class="options">
+    <header class="page-header">
+      <div class="page-title">
+        <h1>Choose a theme</h1>
+        <p class="tagline">Pick a palette for the keyboard.</p>
+      </div>
+      <div class="preview">
+        <span class="swatch" aria-hidden="true" title="Background"></span>
+        <span class="swatch" aria-hidden="true" title="Button"></span>
+        <span class="swatch" aria-hidden="true" title="Shift"></span>
+        <span class="swatch" aria-hidden="true" title="Text"></span>
+      </div>
+    </header>
+    <section>
+      <div id="palette-list" class="palette-list" role="radiogroup" aria-label="Theme palette choices"></div>
+      <p id="save-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="options.js"></script>
 </body>
-<script src="options.js"></script>
-
 </html>
